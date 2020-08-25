@@ -32,9 +32,21 @@ namespace com.CJ.DoxygenTest
             return 0;
         }
 
+        /// <summary>
+        /// My private function.
+        /// </summary>
         private void MyPrivatefunction()
         {
         
+        }
+        
+        /// <summary>
+        /// A neww function.
+        /// </summary>
+        /// <returns>Returns an int.</returns>
+        public int ANewFunction()
+        {
+            return 0;
         }
 
         /// <summary>
