@@ -57,6 +57,15 @@ namespace com.CJ.DoxygenTest
         {
             return 0;
         }
+        
+        /// <summary>
+        /// An even newer function.
+        /// </summary>
+        /// <returns>Returns an int.</returns>
+        public int AnEvenNewerFunction()
+        {
+            return 0;
+        }
 
         /// <summary>
         /// Description for my MyProtectedFunction2.
