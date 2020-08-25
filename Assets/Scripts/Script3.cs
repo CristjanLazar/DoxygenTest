@@ -21,45 +21,45 @@ namespace com.CJ.DoxygenTest
         {
             
         }
-    }
-
-    /// <summary>
-    /// Desciption for MyClass.
-    /// </summary>
-    public class MyClass
-    {
-        /// <summary>
-        /// Description for field int1.
-        /// </summary>
-        public int int1;
         
         /// <summary>
-        /// Description for filed int2.
+        /// Description for MyClass.
         /// </summary>
-        public int int2;
+        public class MyClass
+        {
+            /// <summary>
+            /// Description for field int1.
+            /// </summary>
+            public int int1;
+        
+            /// <summary>
+            /// Description for filed int2.
+            /// </summary>
+            public int int2;
+
+            /// <summary>
+            /// Description for MyFunc.
+            /// </summary>
+            public void MyFunc()
+            {
+            
+            }
+
+            private void MyPrivateFunc()
+            {
+            
+            }
+        }
 
         /// <summary>
-        /// Description for MyFunc.
+        /// Description for MyClass2.
         /// </summary>
-        public void MyFunc()
+        public class MyClass2 : MyClass
         {
+            private void MyPrivateFunc()
+            {
             
-        }
-
-        private void MyPrivateFunc()
-        {
-            
-        }
-    }
-
-    /// <summary>
-    /// Description for MyClass2.
-    /// </summary>
-    public class MyClass2 : MyClass
-    {
-        private void MyPrivateFunc()
-        {
-            
+            }
         }
     }
 }
