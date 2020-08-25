@@ -41,10 +41,19 @@ namespace com.CJ.DoxygenTest
         }
         
         /// <summary>
-        /// A neww function.
+        /// A new function.
         /// </summary>
         /// <returns>Returns an int.</returns>
         public int ANewFunction()
+        {
+            return 0;
+        }
+        
+        /// <summary>
+        /// A newer function.
+        /// </summary>
+        /// <returns>Returns an int.</returns>
+        public int ANewerFunction()
         {
             return 0;
         }
