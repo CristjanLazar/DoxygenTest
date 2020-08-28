@@ -32,10 +32,20 @@ jobs:
         # Working directory
         working-directory: "." # default is .
     
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        # Default Doxyfile build documentation to html directory. 
-        # Change the directory if changes in Doxyfile
-        publish_dir: ./html
+    # - name: Deploy
+      # uses: peaceiris/actions-gh-pages@v3
+      # with:
+        # github_token: ${{ secrets.GITHUB_TOKEN }}
+        # # Default Doxyfile build documentation to html directory. 
+        # # Change the directory if changes in Doxyfile
+        # publish_dir: ./html
+        
+    - name: Push to another repository
+        uses: cpina/github-action-push-to-another-repository@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'docs'
+          destination-github-username: 'CristjanLazar'
+          destination-repository-name: 'doxygen-test-docs'
+          user-email: cristjan@haptiq.no
