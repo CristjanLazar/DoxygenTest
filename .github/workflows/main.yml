@@ -56,4 +56,4 @@ jobs:
         REPO: git@github.com:CristjanLazar/doxygen-test-docs.git
         BRANCH: master
         FOLDER: docs
-        SSH_PRIVATE_KEY: ${{ secrets.API_TOKEN_GITHUB }}
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
