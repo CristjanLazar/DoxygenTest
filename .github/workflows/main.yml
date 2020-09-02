@@ -40,12 +40,20 @@ jobs:
         # # Change the directory if changes in Doxyfile
         # publish_dir: ./html
         
-    - name: Pushes to another repository
-      uses: cpina/github-action-push-to-another-repository@master
+    # - name: Pushes to another repository
+      # uses: cpina/github-action-push-to-another-repository@master
+      # env:
+        # API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      # with:
+        # source-directory: 'docs'
+        # destination-github-username: 'CristjanLazar'
+        # destination-repository-name: 'doxygen-test-docs'
+        # user-email: cristjan@haptiq.no
+        
+    - name: Deploy
+      uses: s0/git-publish-subdir-action@develop
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      with:
-        source-directory: 'docs'
-        destination-github-username: 'CristjanLazar'
-        destination-repository-name: 'doxygen-test-docs'
-        user-email: cristjan@haptiq.no
+        REPO: git@github.com:CristjanLazar/doxygen-test-docs.git
+        BRANCH: master
+        FOLDER: docs
+        SSH_PRIVATE_KEY: ${{ secrets.API_TOKEN_GITHUB }}
