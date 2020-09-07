@@ -2,14 +2,12 @@ const core = require('@actions/core');
 const fs = require('fs');
 
 try {
-  const projectId = `SYE`;
-
   // get path
-  const path = `docs/SYE` //core.getInput('path');
+  const path = core.getInput('path'); //`docs/SYE`
   console.log(`Path is ${path}`);
 
   // write file
-  const fileName = `Live 1.1 SYE - Technical Document` //core.getInput(`file-name`);
+  const fileName = core.getInput(`shortcut-name`); //`Live 1.1 SYE - Technical Document`
   const fullPath = `${path}/${fileName}.html`;
   const fileData = `<meta http-equiv="REFRESH" content="0;URL=html/index.html">`;
   console.log(`File name is ${fileName}`);

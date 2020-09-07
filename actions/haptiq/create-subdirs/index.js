@@ -3,7 +3,7 @@ const fs = require('fs');
 
 try {
   // inputs
-  const projectId = `SYE`; // core.getInput('project-id');
+  const projectId = core.getInput('project-id'); //`SYE`
   const path = `./docs/${projectId}`;
   console.log(`Path is ${path}`);
   
