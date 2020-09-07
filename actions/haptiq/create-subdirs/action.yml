@@ -1,0 +1,13 @@
+name: 'Create docs subdirectories'
+description: 'Create a docs/project-id subfolder to store the doxygen output'
+inputs:
+  project-id:
+    description: 'The project id (ex. SYE, Lundin, etc.)'
+    required: true
+    default: 'SYE'
+outputs:
+  path:
+    description: 'The path to the created directory'
+runs:
+  using: 'node12'
+  main: 'index.js'

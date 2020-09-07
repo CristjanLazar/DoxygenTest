@@ -1,0 +1,14 @@
+name: 'Create shortcut'
+description: 'Create a shortcut to /docs/project-id/html/index.html'
+inputs:
+  path:
+    description: 'The path to use'
+    required: true
+    default: 'docs/SYE'
+  shortcut-name:
+    description: 'The name of the shortcut'
+    required: true
+    default: 'Live 1.1 SYE - Technical Documentation'
+runs:
+  using: 'node12'
+  main: 'index.js'

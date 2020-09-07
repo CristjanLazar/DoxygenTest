@@ -23,32 +23,28 @@ jobs:
     
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
+      
+    # CREATE PATH HERE
+    - name: Create subdirectories
+        uses: ./actions/haptiq/create-subdirs
+        id: create_subdir
+        with:
+          project-id: 'Lundin'
         
-    - name: Doxygen Action
+    - name: Create Doxygen files
       uses: mattnotmitt/doxygen-action@v1.1.0
       with:
         # Path to Doxyfile
         doxyfile-path: "./Doxyfile" # default is ./Doxyfile
         # Working directory
         working-directory: "." # default is .
-    
-    # - name: Deploy
-      # uses: peaceiris/actions-gh-pages@v3
-      # with:
-        # github_token: ${{ secrets.GITHUB_TOKEN }}
-        # # Default Doxyfile build documentation to html directory. 
-        # # Change the directory if changes in Doxyfile
-        # publish_dir: ./html
         
-    # - name: Pushes to another repository
-      # uses: cpina/github-action-push-to-another-repository@master
-      # env:
-        # API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      # with:
-        # source-directory: 'docs'
-        # destination-github-username: 'CristjanLazar'
-        # destination-repository-name: 'doxygen-test-docs'
-        # user-email: cristjan@haptiq.no
+    # CREATE SHORTCUT HERE
+    - name: Create index.html shortcut
+        uses: ./actions/haptiq/create-shortcut
+        with:
+          path: '${{ steps.create_subdir.outputs.path }}'
+          shortcut-name: 'Live 1.1 ${{ steps.create_subdir.inputs.project-id }} - Technical Documentation'
         
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
