@@ -26,10 +26,10 @@ jobs:
       
     # CREATE PATH HERE
     - name: Create subdirectories
-        uses: ./actions/haptiq/create-subdirs
-        id: create_subdir
-        with:
-          project-id: 'Lundin'
+      uses: ./actions/haptiq/create-subdirs
+      id: create_subdir
+      with:
+        project-id: 'Lundin'
         
     - name: Create Doxygen files
       uses: mattnotmitt/doxygen-action@v1.1.0
@@ -41,10 +41,10 @@ jobs:
         
     # CREATE SHORTCUT HERE
     - name: Create index.html shortcut
-        uses: ./actions/haptiq/create-shortcut
-        with:
-          path: '${{ steps.create_subdir.outputs.path }}'
-          shortcut-name: 'Live 1.1 ${{ steps.create_subdir.inputs.project-id }} - Technical Documentation'
+      uses: ./actions/haptiq/create-shortcut
+      with:
+        path: '${{ steps.create_subdir.outputs.path }}'
+        shortcut-name: 'Live 1.1 ${{ steps.create_subdir.inputs.project-id }} - Technical Documentation'
         
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
