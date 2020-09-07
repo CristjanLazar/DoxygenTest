@@ -11,4 +11,4 @@ inputs:
     default: 'Live 1.1 SYE - Technical Documentation'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
