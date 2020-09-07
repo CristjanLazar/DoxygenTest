@@ -44,7 +44,7 @@ jobs:
       uses: ./actions/haptiq/create-shortcut
       with:
         path: '${{ steps.create_subdir.outputs.path }}'
-        shortcut-name: "Live 1.1 ${{ steps.create_subdir.inputs.project-id }} - Technical Documentation"
+        shortcut-name: "Live 1.1 ${{ steps.create_subdir.outputs.project-id }} - Technical Documentation"
         
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop

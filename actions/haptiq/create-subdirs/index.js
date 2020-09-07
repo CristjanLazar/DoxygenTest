@@ -12,6 +12,7 @@ try {
 
   // output path
   core.setOutput('path', path);
+  core.setOutput('project-id', projectId);
 } 
 
 catch (error) {
